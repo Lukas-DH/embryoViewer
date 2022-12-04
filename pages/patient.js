@@ -12,65 +12,71 @@ function Createbarcode() {
     <>
       <NaviBarBioG />
       <div className={styles.container}>
-      <Container>
-        <main className={styles.wrapper}>
-          {demoPatient.content
-            .filter(
-              (video) =>
-                video.fate_status.includes("transfer") ||
-                video.fate_status.includes("freeze")
-            )
-            .map((video) => (
-              <Card key={video.well_number} style={{ width: "18rem" }}>
-                <Card.Img
-                  variant="top"
-                  src={`/Demo_well${
-                    video.well_number > 9
-                      ? video.well_number
-                      : "0" + video.well_number
-                  }_zid99_Example Patient - 2 6.0_172500.png`}
-                ></Card.Img>
-                <Card.Body>
-                  <Card.Title>
-                    Well {video.well_number + " "}
-                    {video.fate_status === "transfer" ? (
-                      <Image
-                        src="/transfer.svg"
-                        alt="Vercel Logo"
-                        width={20}
-                        height={20}
-                      />
-                    ) : (
-                      <Image
-                        src="/freeze.svg"
-                        alt="Vercel Logo"
-                        width={20}
-                        height={20}
-                      />
-                    )}{" "}
-                    -{" "}
-                  </Card.Title>
-
-                  <Card.Text>
-                    This embryo will be{" "}
-                    <strong>
-                      {video.fate_status === "freeze" ? "frozen" : "transfered"}
-                    </strong>
-                  </Card.Text>
-                  <Link
-                    href={`/well${
+        <main className={styles.main}>
+          <div className={styles.grid}>
+            {demoPatient.content
+              .filter(
+                (video) =>
+                  video.fate_status.includes("transfer") ||
+                  video.fate_status.includes("freeze")
+              )
+              .map((video) => (
+                <Card
+                  key={video.well_number}
+                  style={{ width: "18rem", margin: "1rem" }}
+                >
+                  <Card.Img
+                    variant="top"
+                    src={`/Demo_well${
                       video.well_number > 9
                         ? video.well_number
                         : "0" + video.well_number
-                    }`}
-                  >
-                    <Button variant="primary">Video</Button>{" "}
-                  </Link>
-                </Card.Body>
-              </Card>
-            ))}
+                    }_zid99_Example Patient - 2 6.0_172500.png`}
+                  ></Card.Img>
+                  <Card.Body>
+                    <Card.Title>
+                      Well {video.well_number + " "}
+                      {video.fate_status === "transfer" ? (
+                        <Image
+                          src="/transfer.svg"
+                          alt="Vercel Logo"
+                          width={20}
+                          height={20}
+                        />
+                      ) : (
+                        <Image
+                          src="/freeze.svg"
+                          alt="Vercel Logo"
+                          width={20}
+                          height={20}
+                        />
+                      )}{" "}
+                      -{" "}
+                    </Card.Title>
+
+                    <Card.Text>
+                      This embryo will be{" "}
+                      <strong>
+                        {video.fate_status === "freeze"
+                          ? "frozen"
+                          : "transfered"}
+                      </strong>
+                    </Card.Text>
+                    <Link
+                      href={`/well${
+                        video.well_number > 9
+                          ? video.well_number
+                          : "0" + video.well_number
+                      }`}
+                    >
+                      <Button variant="primary">Video</Button>{" "}
+                    </Link>
+                  </Card.Body>
+                </Card>
+              ))}
+          </div>
         </main>
-      </Container>
+      </div>
     </>
   );
 }
