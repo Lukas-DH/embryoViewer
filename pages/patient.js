@@ -8,24 +8,6 @@ import Image from "next/image";
 import wlecomeCode from "../public/transfer.svg";
 
 function Createbarcode() {
-  demoPatient.content
-    .filter(
-      (video) =>
-        video.fate_status.includes("transfer") ||
-        video.fate_status.includes("freeze")
-    )
-    .map((video) => console.log(JSON.stringify(video.well_number + "tits")));
-
-  console.log(
-    JSON.stringify(
-      demoPatient.content.filter(
-        (video) =>
-          video.fate_status.includes("transfer") ||
-          video.fate_status.includes("freeze")
-      ).length
-    )
-  );
-
   return (
     <>
       <NaviBarBioG />
@@ -76,11 +58,11 @@ function Createbarcode() {
                     </strong>
                   </Card.Text>
                   <Link
-                    href={`https://159.89.111.193/files/video.json/cda75800-5b24-11ed-9d94-0800273179d6/well${
+                    href={`/well${
                       video.well_number > 9
                         ? video.well_number
                         : "0" + video.well_number
-                    }_zid99.mp4`}
+                    }`}
                   >
                     <Button variant="primary">Video</Button>{" "}
                   </Link>
@@ -93,23 +75,3 @@ function Createbarcode() {
   );
 }
 export default Createbarcode;
-
-// <video
-// controls
-// width="400"
-// height="400"
-// loop
-// muted
-// preload="auto"
-// poster="/Demo_well01_zid99_Example Patient - 2 6.0_172500.png"
-// >
-// <source
-//   src="https://159.89.111.193/files/video.json/cda75800-5b24-11ed-9d94-0800273179d6/well01_zid99.mp4"
-//   type="video/mp4"
-// />
-// {/* <source src="rabbit320.webm" type="video/webm" /> */}
-// <p>
-//   Your browser doesn't support HTML5 video. Here is a{" "}
-//   <a href="rabbit320.mp4">link to the video</a> instead.
-// </p>
-// </video>
