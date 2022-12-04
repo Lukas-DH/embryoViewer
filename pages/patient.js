@@ -89,10 +89,6 @@ function Createbarcode() {
             ))}
         </main>
       </Container>
-
-      <Link href={`/`}>
-        <h1>yeah baby</h1>
-      </Link>
     </>
   );
 }
