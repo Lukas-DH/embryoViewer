@@ -27,7 +27,7 @@ const Post = () => {
           <Image
             src={`/${
               demoPatient.content.filter(
-                (item) => item.well_number === parseInt(videop.substr(-2))
+                (item) => item?.well_number === parseInt(videop.substr(-2))
               )[0].fate_status
             }.svg`}
             alt="Vercel Logo"
@@ -64,7 +64,7 @@ const Post = () => {
         </a>
         {videop.length > 3
           ? demoPatient.content.filter(
-              (item) => item.well_number === parseInt(videop.substr(-2))
+              (item) => item?.well_number === parseInt(videop.substr(-2))
             )[0].fate_status
           : null}
       </footer>
