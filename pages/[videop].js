@@ -10,14 +10,30 @@ const Post = () => {
   const router = useRouter();
   const { videop } = router.query;
 
+  // const num = JSON.stringify(videop).slice(-3, -1);
+  // console.log(num);
+
+  // const item = demoPatient.content.filter(
+  //   (video) => video.well_number == parseInt(num).well_number
+  // );
+  // console.log(parseInt(item));
   return (
     <>
-      <NaviBarBioG />
-
+      {" "}
+      <NaviBarBioG />{" "}
       <Container>
-        {" "}
         <main className={styles.main}>
           <h1 className={styles.title}>{videop}</h1>
+          <Image
+            src={`/${
+              demoPatient.content.filter(
+                (item) => item.well_number === parseInt(videop.slice(-2))
+              )[0].fate_status
+            }.svg`}
+            alt="Vercel Logo"
+            width={72}
+            height={50}
+          />
           <video
             controls
             width="100%"
@@ -46,6 +62,11 @@ const Post = () => {
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
+        {
+          demoPatient.content.filter(
+            (item) => item.well_number === parseInt(videop.slice(-2))
+          )[0].fate_status
+        }
       </footer>
     </>
   );
