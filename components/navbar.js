@@ -2,8 +2,9 @@ import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import Image from "next/image";
 import bioBrand from "../public/logo_mobile-retina.png";
+import Link from "next/link";
 
-function TextLinkExample() {
+function NaviBarBioG() {
   return (
     <>
       {/* <Navbar bg="light" variant="light">
@@ -33,14 +34,15 @@ function TextLinkExample() {
 
       <Navbar bg="light" expand="md">
         <Container>
-          <Navbar.Brand href="#home">
-            {" "}
-            <Image
-              src={bioBrand}
-              height={30}
-              alt="me"
-              className="d-inline-block align-top"
-            />{" "}
+          <Navbar.Brand>
+            <Link href="/">
+              <Image
+                src={bioBrand}
+                height={50}
+                alt="me"
+                className="d-inline-block align-top"
+              />
+            </Link>{" "}
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -61,4 +63,4 @@ function TextLinkExample() {
   );
 }
 
-export default TextLinkExample;
+export default NaviBarBioG;
