@@ -4,6 +4,7 @@ import NaviBarBioG from "../components/navbar";
 import Link from "next/link";
 import demoPatient from "../components/demo_patient";
 import styles from "../styles/Video.module.css";
+import Image from "next/image";
 
 const Post = () => {
   const router = useRouter();
@@ -19,8 +20,8 @@ const Post = () => {
           <h1 className={styles.title}>{videop}</h1>
           <video
             controls
-            width="40%"
-            height="100%"
+            width="100%"
+            height="500vh"
             loop
             muted
             preload="auto"
@@ -31,13 +32,21 @@ const Post = () => {
               type="video/mp4"
             />
             {/* <source src="rabbit320.webm" type="video/webm" /> */}
-            <p>
-              Your browser doesn't support HTML5 video. Here is a{" "}
-              <a href="rabbit320.mp4">link to the video</a> instead.
-            </p>
           </video>
         </main>
       </Container>
+      <footer className={styles.footer}>
+        <a
+          href="https://CaringIVF.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Powered by CaringIVF{" "}
+          <span className={styles.logo}>
+            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
+          </span>
+        </a>
+      </footer>
     </>
   );
 };
