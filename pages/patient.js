@@ -11,7 +11,7 @@ function Createbarcode() {
   return (
     <>
       <NaviBarBioG />
-
+      <div className={styles.container}>
       <Container>
         <main className={styles.wrapper}>
           {demoPatient.content
