@@ -62,7 +62,7 @@ const Post = () => {
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
-        {videop.length > 3
+        {videop?.length > 3
           ? demoPatient.content.filter(
               (item) => item?.well_number === parseInt(videop?.substr(-2))
             )[0]?.fate_status
