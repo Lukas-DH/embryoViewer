@@ -1,8 +1,11 @@
 import Link from "next/link";
 import NaviBarBioG from "../components/navbar";
 import styles from "../styles/Patient.module.css";
-import demoPatient from "./demo_patient";
+import demoPatient from "../components/demo_patient";
 import { Card, Button, Container, Row, Col } from "react-bootstrap";
+import Image from "next/image";
+
+import wlecomeCode from "../public/transfer.svg";
 
 function Createbarcode() {
   demoPatient.content
@@ -46,11 +49,31 @@ function Createbarcode() {
                   }_zid99_Example Patient - 2 6.0_172500.png`}
                 ></Card.Img>
                 <Card.Body>
-                  <Card.Title>{video.well_number}</Card.Title>
+                  <Card.Title>
+                    Well {video.well_number + " "}
+                    {video.fate_status === "transfer" ? (
+                      <Image
+                        src="/transfer.svg"
+                        alt="Vercel Logo"
+                        width={20}
+                        height={20}
+                      />
+                    ) : (
+                      <Image
+                        src="/freeze.svg"
+                        alt="Vercel Logo"
+                        width={20}
+                        height={20}
+                      />
+                    )}{" "}
+                    -{" "}
+                  </Card.Title>
+
                   <Card.Text>
-                    {`This embryo will be ${
-                      video.fate_status === "freeze" ? "frozen" : "transfered"
-                    }`}
+                    This embryo will be{" "}
+                    <strong>
+                      {video.fate_status === "freeze" ? "frozen" : "transfered"}
+                    </strong>
                   </Card.Text>
                   <Link
                     href={`https://159.89.111.193/files/video.json/cda75800-5b24-11ed-9d94-0800273179d6/well${
@@ -59,7 +82,7 @@ function Createbarcode() {
                         : "0" + video.well_number
                     }_zid99.mp4`}
                   >
-                    <Button variant="primary">Go somewhere</Button>{" "}
+                    <Button variant="primary">Video</Button>{" "}
                   </Link>
                 </Card.Body>
               </Card>
