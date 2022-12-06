@@ -13,6 +13,8 @@ function Createbarcode() {
       <NaviBarBioG />
       <div className={styles.container}>
         <main className={styles.main}>
+          <h1 className={styles.title}>Patient Name (patient ID-number)</h1>
+          <br />
           <div className={styles.grid}>
             {demoPatient.content
               .filter(
