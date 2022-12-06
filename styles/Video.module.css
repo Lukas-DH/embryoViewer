@@ -57,6 +57,16 @@
 .description {
   text-align: center;
 }
+.title2 {
+  margin: 0;
+  line-height: 1.15;
+  font-size: 2rem;
+}
+
+.title2,
+.description {
+  text-align: center;
+}
 
 .description {
   margin: 4rem 0;
