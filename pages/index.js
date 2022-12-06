@@ -28,13 +28,16 @@ export default function Home() {
             />{" "}
           </p>
           <div className={styles.grid}>
-            <a href="" className={styles.card}>
+            <Link
+              href="https://rosskhanas.github.io/react-qr-code/"
+              className={styles.card}
+            >
               <h2>Create a barcode &rarr;</h2>
               <p>
                 Scan using a smart phone or tablet to show the patient embryos.
               </p>
-            </a>
-            <Link href="/patient" className={styles.card}>
+            </Link>
+            <Link href="/search" className={styles.card}>
               <h2>Search patient&rarr;</h2>
               <p>
                 load a patient profile to see thier embryos developing in
