@@ -61,9 +61,6 @@ const Post = () => {
           rel="noopener noreferrer"
         >
           Powered by CaringIVF{" "}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
         </a>
         {videop?.length > 3
           ? demoPatient.content.filter(
