@@ -23,7 +23,7 @@ const Post = () => {
       <NaviBarBioG />{" "}
       <Container>
         <main className={styles.main}>
-          <h1 className={styles.title}>Patient Name (patient ID number)</h1>{" "}
+          <h1 className={styles.title}>Patient Name (patient ID-number)</h1>{" "}
           <br />
           <h1 className={styles.title2}>{videop}</h1>
           <Image
