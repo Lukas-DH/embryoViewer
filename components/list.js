@@ -6,7 +6,7 @@ import styles from "../styles/Patient.module.css";
 function ListSearch(props) {
   const filteredData = data.filter((el) => {
     //if no input the return the original
-    if (props.input.length === "") {
+    if (props.input.length === 0) {
       return null;
     }
     //return the item which contains the user input
@@ -18,13 +18,37 @@ function ListSearch(props) {
     }
   });
   return (
-    <ul>
-      {filteredData.map((item) => (
-        <Link key={item.id} href="/patient">
-          <li key={item.id}>{item.random_num}</li>
-        </Link>
-      ))}
-    </ul>
+    <>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th scope="col">Date of birth</th>
+          </tr>
+        </thead>
+        {filteredData.map((item) => (
+          <>
+            <tr>
+              <th key={item.id} scope="row">
+                <Link
+                  key={item.id}
+                  href="/patient"
+                  // onClick={props.onImageCownload}
+                >
+                  {item.first_name + " " + item.last_name}
+                </Link>
+              </th>
+              <td>
+                <button onClick={() => props.QRdownload(item.first_name)}>
+                  {" "}
+                  {item.random_num}
+                </button>
+              </td>{" "}
+            </tr>
+          </>
+        ))}
+      </table>
+    </>
   );
 }
 

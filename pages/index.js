@@ -29,7 +29,8 @@ export default function Home() {
           </p>
           <div className={styles.grid}>
             <Link
-              href="https://rosskhanas.github.io/react-qr-code/"
+              // https://rosskhanas.github.io/react-qr-code/
+              href="/registration"
               className={styles.card}
             >
               <h2>Create a barcode &rarr;</h2>
