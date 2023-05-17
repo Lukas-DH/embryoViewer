@@ -1,53 +1,37 @@
 import Link from "next/link";
 import { React, useState } from "react";
-import data from "../public/patienList.json";
+
 import styles from "../styles/Patient.module.css";
 
 function ListSearch(props) {
-  const filteredData = data.filter((el) => {
-    //if no input the return the original
-    if (props.input.length === 0) {
-      return null;
-    }
-    //return the item which contains the user input
-    else {
-      return (
-        el.first_name.toLowerCase().includes(props.input) ||
-        el.last_name.toLowerCase().includes(props.input)
-      );
-    }
-  });
+  const filteredData = props.data.length === 0 ? [] : props.data;
+
   return (
     <>
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th scope="col">Date of birth</th>
-          </tr>
-        </thead>
-        {filteredData.map((item) => (
-          <>
-            <tr>
-              <th key={item.id} scope="row">
-                <Link
-                  key={item.id}
-                  href="/patient"
-                  // onClick={props.onImageCownload}
-                >
-                  {item.first_name + " " + item.last_name}
-                </Link>
-              </th>
-              <td>
-                <button onClick={() => props.QRdownload(item.first_name)}>
-                  {" "}
-                  {item.random_num}
-                </button>
-              </td>{" "}
-            </tr>
-          </>
-        ))}
-      </table>
+      {filteredData.map((item, index) => (
+        <Link
+          key={crypto.randomUUID()}
+          href="/createQR"
+          onClick={() => {
+            props.qUuid(item.dish_uuid);
+            props.qRValue(
+              item.patient_given_names + ", " + item.patient_name,
+              item.dish_uuid
+            );
+          }}
+          className={styles.card}
+        >
+          <h2> {item.patient_name + ", " + item.patient_given_names}</h2>
+          <h5>
+            dob:{" "}
+            {item.patient_date_of_birth.replace(
+              /^\[(\d{4}),\s*(\d{1,2}),\s*(\d{1,2})]$/,
+              "$3-$2-$1"
+            )}
+          </h5>
+          <h5>Patient ID: {item.identifier_1}</h5>
+        </Link>
+      ))}
     </>
   );
 }
