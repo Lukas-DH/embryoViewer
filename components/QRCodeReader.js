@@ -30,5 +30,5 @@ export default function ScannerInput({ onScanned }) {
     };
   }, [onScanned, value]);
 
-  return <input type="text" value={value} />;
+  return <input type="hidden" value={value} />;
 }

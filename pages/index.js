@@ -5,52 +5,52 @@ import NaviBarBioG from "../components/navbar";
 import Link from "next/link";
 
 import wlecomeCode from "../public/qrcode_he.png";
+import Reader from "../components/readerComp";
 // import bioBrand from "../public/logo_mobile-retina.png";
 
 export default function Home() {
   return (
     <>
       {" "}
-      <NaviBarBioG />{" "}
+      <NaviBarBioG /> <Reader />;
       <div className={styles.container}>
         <main className={styles.main}>
           <h1 className={styles.title}>
             Welcome to <a href="">EmbryoView!</a>
           </h1>{" "}
           <p className={styles.description}>
-            Get started by creating{" "}
-            <code className={styles.code}>a patient barcode</code>
+            Get started by scanning your patient barcode using teh device
+            infront of you.
+            <br></br>
+            <br></br>
             <Image
               src={wlecomeCode}
               alt="you"
-              style={{ width: "60px", height: "60px" }}
+              style={{ width: "160px", height: "160px" }}
               // className="d-inline-block align-top"
             />{" "}
           </p>
-          <div className={styles.grid}>
+          {/* <div className={styles.grid}>
             <Link
               // https://rosskhanas.github.io/react-qr-code/
-              href="/registration"
+              href="/createQR"
               className={styles.card}
             >
-              <h2>Create a barcode &rarr;</h2>
+              <h2>Create QR &rarr;</h2>
               <p>
-                Scan using a smart phone or tablet to show the patient embryos.
+                Create a QR code for a patient to use later during consultation
               </p>
             </Link>
-            <Link href="/search" className={styles.card}>
-              <h2>Search patient&rarr;</h2>
-              <p>
-                load a patient profile to see thier embryos developing in
-                real-time.
-              </p>
+            <Link href="/videotest" className={styles.card}>
+              <h2>Scan QR&rarr;</h2>
+              <p>Scan patient QR code during embryo transfer consultation</p>
             </Link>
-          </div>
+          </div> */}
         </main>
 
         <footer className={styles.footer}>
           <a
-            href="https://CaringIVF.com"
+            href="https://www.CaringIVF.com"
             target="_blank"
             rel="noopener noreferrer"
           >

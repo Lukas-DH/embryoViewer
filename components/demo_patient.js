@@ -27,7 +27,7 @@ const demoPatient = {
     },
     {
       well_number: 2,
-      fate_status: "freeze",
+      fate_status: "discard",
       session_uuid: "cda75800-5b24-11ed-9d94-0800273179d6",
     },
     {

@@ -107,7 +107,7 @@ function List1() {
             </Form.Group>
             <Button type="submit">Search</Button>
           </Form>
-          <Button onClick={() => onImageCownload("scheisse")} />
+          {/* <Button onClick={() => onImageCownload("scheisse")} /> */}
           <ListSearch
             data={data}
             // input={data}
