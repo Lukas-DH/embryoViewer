@@ -18,10 +18,9 @@ function ListSearch(props) {
       {filteredData.length < 1
         ? ""
         : filteredData.map((item, index) => {
-            const key = crypto.randomUUID();
             return (
               <Link
-                key={key}
+                key={index}
                 href="/createQR"
                 onClick={() => {
                   props.qUuid(
