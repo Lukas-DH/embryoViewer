@@ -17,38 +17,41 @@ function ListSearch(props) {
     <>
       {filteredData.length < 1
         ? ""
-        : filteredData.map((item, index) => (
-            <Link
-              key={crypto.randomUUID()}
-              href="/createQR"
-              onClick={() => {
-                props.qUuid(
-                  item.dish_uuid
-                  // JSON.stringify({
-                  //   data: {
-                  //     uuidQR: item.dish_uuid,
-                  //     dobQR: formattedDate(item.patient_date_of_birth),
-                  //   },
-                  // })
-                );
-                props.qRValue(
-                  item.patient_given_names + ", " + item.patient_name,
-                  item.dish_uuid
-                );
-              }}
-              className={styles.card}
-            >
-              <h2> {item.patient_name + ", " + item.patient_given_names}</h2>
-              <h5>
-                dob:{" "}
-                {item.patient_date_of_birth.replace(
-                  /^\[(\d{4}),\s*(\d{1,2}),\s*(\d{1,2})]$/,
-                  "$3-$2-$1"
-                )}
-              </h5>
-              <h5>Patient ID: {item.identifier_1}</h5>
-            </Link>
-          ))}
+        : filteredData.map((item, index) => {
+            const key = crypto.randomUUID();
+            return (
+              <Link
+                key={key}
+                href="/createQR"
+                onClick={() => {
+                  props.qUuid(
+                    item.dish_uuid
+                    // JSON.stringify({
+                    //   data: {
+                    //     uuidQR: item.dish_uuid,
+                    //     dobQR: formattedDate(item.patient_date_of_birth),
+                    //   },
+                    // })
+                  );
+                  props.qRValue(
+                    item.patient_given_names + ", " + item.patient_name,
+                    item.dish_uuid
+                  );
+                }}
+                className={styles.card}
+              >
+                <h2> {item.patient_name + ", " + item.patient_given_names}</h2>
+                <h5>
+                  dob:{" "}
+                  {item.patient_date_of_birth.replace(
+                    /^\[(\d{4}),\s*(\d{1,2}),\s*(\d{1,2})]$/,
+                    "$3-$2-$1"
+                  )}
+                </h5>
+                <h5>Patient ID: {item.identifier_1}</h5>
+              </Link>
+            );
+          })}
     </>
   );
 }
