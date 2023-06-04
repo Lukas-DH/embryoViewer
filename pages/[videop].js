@@ -59,7 +59,7 @@ const Post = () => {
                     playbackRate={2}
                     width="30vw"
                     // height={840}
-                    url={`https://10.13.45.201/files/video.json/${videop}/well01_zid99.mp4`}
+                    url={`https://159.89.111.193/files/video.json/${videop}/well01_zid99.mp4`}
                   />
                   {/* <video
                     controls

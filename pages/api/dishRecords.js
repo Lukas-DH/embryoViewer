@@ -1,5 +1,6 @@
 import https from "https";
 import fetch from "node-fetch";
+// clinic ip 10dot13dot45dot201
 
 export default async function handler(req, res) {
   const { param1, param2 } = req.body;
@@ -10,7 +11,7 @@ export default async function handler(req, res) {
     });
 
     const response = await fetch(
-      "https://10.13.45.201/geri_connect/public/api/v1/dishrecords",
+      "https://159.89.111.193/geri_connect/public/api/v1/dishrecords",
       {
         agent: httpsAgent,
         headers: {
