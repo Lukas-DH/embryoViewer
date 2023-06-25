@@ -58,7 +58,7 @@ const ModalOverlay = ({ onClose, pdata, handleModalClose }) => {
             <Form onSubmit={handleFormSubmit}>
               <Form.Group controlId="formBasicEmail">
                 <Form.Label>
-                  Please enter your date of birth [DDMMYYY]
+                  Please enter your date of birth [YYYYMMDD]
                 </Form.Label>
                 <Form.Control
                   type="text"

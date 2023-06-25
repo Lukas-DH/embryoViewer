@@ -32,10 +32,11 @@ export default async function handler(req, res) {
       }
       //return the item which contains the user input and has a unique dish_uuid
       else {
-        if (uniqueDishUuids[el.dish_uuid]) {
-          return false; // exclude if duplicate dish_uuid
-        }
-        uniqueDishUuids[el.dish_uuid] = true; // mark as seen
+        // change list order here testxxx
+        // if (uniqueDishUuids[el.dish_uuid]) {
+        //   return false; // exclude if duplicate dish_uuid
+        // }
+        // uniqueDishUuids[el.dish_uuid] = true; // mark as seen
         return (
           el.patient_given_names.toLowerCase().includes(param2) ||
           el.patient_name.toLowerCase().includes(param2) ||
@@ -66,7 +67,7 @@ export default async function handler(req, res) {
     // const filteredData = data.content.filter(
     //   (item) => item.patient_given_names === "johny"
     // );
-    console.log("length", param2.length);
+    console.log("length", param2);
 
     res.status(200).json({ filteredData });
   } catch (error) {

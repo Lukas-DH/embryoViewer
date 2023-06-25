@@ -27,13 +27,14 @@ function Reader() {
       // Access the returned values from the hello function
       const { dishRecord, sessionRecord } = result;
       // Do something with dishRecord and sessionRecord
-      console.log("BRRRRRRAAAA", sessionRecord);
+      console.log("BRRRRRRAAAA", dishRecord);
       // Redirect to the next step
       setUrl(sessionRecord.videoID.session_uuid);
+      //change list order here testxxx
       setPdata({
-        patient_date_of_birth: dishRecord.filteredData[0].patient_date_of_birth,
-        patient_given_names: dishRecord.filteredData[0].patient_given_names,
-        patient_name: dishRecord.filteredData[0].patient_name,
+        patient_date_of_birth: dishRecord.filteredData[1].patient_date_of_birth,
+        patient_given_names: dishRecord.filteredData[1].patient_given_names,
+        patient_name: dishRecord.filteredData[1].patient_name,
         session_uuid: sessionRecord.videoID.session_uuid,
       });
       console.log("yippyyyyy", pdata);
@@ -45,6 +46,7 @@ function Reader() {
   }
 
   function onClose(status) {
+    console.log(pdata);
     setShowModal(status);
     // Redirect to the next step
     // window.location.href = `https://159.89.111.193/files/video.json/${url}/well01_zid99.mp4`;

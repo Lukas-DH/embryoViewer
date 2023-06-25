@@ -26,7 +26,7 @@ export default async function hello(query) {
         }),
       }).then((response) => response.json()),
     ]);
-    console.log("dishRecord:", sessionRecord);
+    console.log("dishRecord:", dishRecord);
     return {
       dishRecord,
       sessionRecord,
