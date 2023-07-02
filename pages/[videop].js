@@ -15,6 +15,7 @@ import { useState, useEffect } from "react";
 import wlecomeCode from "../public/transfer.svg";
 import dynamic from "next/dynamic";
 import fateData from "../components/fateData";
+import dishData from "../components/dishData";
 const Post = () => {
   const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
   const router = useRouter();
@@ -22,13 +23,27 @@ const Post = () => {
   const videoUrl =
     "https://159.89.111.193/files/video.json/cda75800-5b24-11ed-9d94-0800273179d6/well01_zid99.mp4";
   const [fate, setFate] = useState(null);
+  const [dish, setDish] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const data = await fateData("cda75800-5b24-11ed-9d94-0800273179d6");
         setFate(data.fateData);
+
         console.log("MYFATE", data);
+
+        const dish = await dishData("cda75800-5b24-11ed-9d94-0800273179d6"); // Substitute with your actual function here
+        // replacexxx
+        console.log(
+          "MYDISH",
+          dish.dishData.dish.content[1].patient_given_names
+        );
+        setDish(
+          dish.dishData.dish.content[1].patient_given_names +
+            " " +
+            dish.dishData.dish.content[1].patient_name
+        );
       } catch (error) {
         console.log(error);
         // Handle your error
@@ -44,8 +59,8 @@ const Post = () => {
       <NaviBarBioG />
       <div className={styles.container}>
         <main className={styles.main}>
-          <h1 className={styles.title}>Patient Name (patient ID-number)</h1>
-          {JSON.stringify(fate)}
+          <h1 className={styles.title}>{dish}</h1>
+
           <br />
           <div className={styles.grid}>
             {fate
@@ -107,9 +122,7 @@ const Post = () => {
                               ? video.well_number
                               : "0" + video.well_number
                           }`}
-                        >
-                          <Button variant="primary">Video</Button>{" "}
-                        </Link>
+                        ></Link>
                       </Card.Body>
                     </Card>
                   ))
