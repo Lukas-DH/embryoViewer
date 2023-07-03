@@ -37,12 +37,12 @@ const Post = () => {
           // replacexxx
           console.log(
             "MYDISH",
-            dish.dishData.dish.content[1].patient_given_names
+            dish.dishData.dish.content[0].patient_given_names
           );
           setDish(
-            dish.dishData.dish.content[1].patient_given_names +
+            dish.dishData.dish.content[0].patient_given_names +
               " " +
-              dish.dishData.dish.content[1].patient_name
+              dish.dishData.dish.content[0].patient_name
           );
         } catch (error) {
           console.log(error);

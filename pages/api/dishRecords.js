@@ -33,10 +33,10 @@ export default async function handler(req, res) {
       //return the item which contains the user input and has a unique dish_uuid
       else {
         // change list order here testxxx
-        // if (uniqueDishUuids[el.dish_uuid]) {
-        //   return false; // exclude if duplicate dish_uuid
-        // }
-        // uniqueDishUuids[el.dish_uuid] = true; // mark as seen
+        if (uniqueDishUuids[el.dish_uuid]) {
+          return false; // exclude if duplicate dish_uuid
+        }
+        uniqueDishUuids[el.dish_uuid] = true; // mark as seen
         return (
           el.patient_given_names.toLowerCase().includes(param2) ||
           el.patient_name.toLowerCase().includes(param2) ||

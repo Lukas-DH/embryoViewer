@@ -2,12 +2,10 @@ import React, { useState } from "react";
 import ScannerInput from "../components/QRCodeReader";
 import ModalOverlay from "../components/modalOverlay";
 import hello from "../components/patientVideo";
-import { useRouter } from "next/router";
+
 import styles from "../styles/Patient.module.css";
 
 function Reader() {
-  const router = useRouter();
-  const [data, setData] = useState("XXX");
   const [pdata, setPdata] = useState({
     patient_date_of_birth: "",
     patient_given_names: "",
@@ -32,9 +30,9 @@ function Reader() {
       setUrl(sessionRecord.videoID.session_uuid);
       //change list order here testxxx
       setPdata({
-        patient_date_of_birth: dishRecord.filteredData[1].patient_date_of_birth,
-        patient_given_names: dishRecord.filteredData[1].patient_given_names,
-        patient_name: dishRecord.filteredData[1].patient_name,
+        patient_date_of_birth: dishRecord.filteredData[0].patient_date_of_birth,
+        patient_given_names: dishRecord.filteredData[0].patient_given_names,
+        patient_name: dishRecord.filteredData[0].patient_name,
         session_uuid: sessionRecord.videoID.session_uuid,
       });
       console.log("yippyyyyy", pdata);
