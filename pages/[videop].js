@@ -20,38 +20,39 @@ const Post = () => {
   const ReactPlayer = dynamic(() => import("react-player"), { ssr: false });
   const router = useRouter();
   const { videop } = router.query;
-  const videoUrl =
-    "https://159.89.111.193/files/video.json/cda75800-5b24-11ed-9d94-0800273179d6/well01_zid99.mp4";
+
   const [fate, setFate] = useState(null);
   const [dish, setDish] = useState(null);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const data = await fateData("cda75800-5b24-11ed-9d94-0800273179d6");
-        setFate(data.fateData);
+    if (videop) {
+      const fetchData = async () => {
+        try {
+          const data = await fateData(videop);
+          setFate(data.fateData);
 
-        console.log("MYFATE", data);
+          console.log("MYFATE", data);
 
-        const dish = await dishData("cda75800-5b24-11ed-9d94-0800273179d6"); // Substitute with your actual function here
-        // replacexxx
-        console.log(
-          "MYDISH",
-          dish.dishData.dish.content[1].patient_given_names
-        );
-        setDish(
-          dish.dishData.dish.content[1].patient_given_names +
-            " " +
-            dish.dishData.dish.content[1].patient_name
-        );
-      } catch (error) {
-        console.log(error);
-        // Handle your error
-      }
-    };
+          const dish = await dishData(videop); // Substitute with your actual function here
+          // replacexxx
+          console.log(
+            "MYDISH",
+            dish.dishData.dish.content[1].patient_given_names
+          );
+          setDish(
+            dish.dishData.dish.content[1].patient_given_names +
+              " " +
+              dish.dishData.dish.content[1].patient_name
+          );
+        } catch (error) {
+          console.log(error);
+          // Handle your error
+        }
+      };
 
-    fetchData();
-  }, []);
+      fetchData();
+    }
+  }, [router.query]);
   console.log(fate);
 
   return (
