@@ -13,7 +13,7 @@ function NaviBarBioG() {
             <Link href="/">
               <Image
                 src={bioBrand}
-                height={50}
+                height={94}
                 alt="me"
                 className="d-inline-block align-top"
               />
@@ -22,7 +22,9 @@ function NaviBarBioG() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="/createQR">Create barcode</Nav.Link>
+              <Nav.Link href="/createQR" style={{ fontSize: "25px" }}>
+                Create barcode
+              </Nav.Link>
               {/* <Nav.Link href="#features">Search</Nav.Link> */}
             </Nav>
             <Nav>

@@ -94,18 +94,20 @@ function List1() {
           <QRCode className={styles.QRCode} id="QRCode" value={pUuuid} />
           <div className={styles.container}> </div>
 
-          <Form onSubmit={handleSumbit}>
+          <Form autoComplete="off" onSubmit={handleSumbit}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
-              <Form.Label>Name search</Form.Label>
+              <Form.Label style={{ fontSize: "25px" }}>Name search</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Patient Name"
                 name="patientName"
                 ref={inputRef}
               />
-              <Form.Text className="text-muted">or scan the barcode</Form.Text>
+              {/* <Form.Text className="text-muted">or scan the barcode</Form.Text> */}
             </Form.Group>
-            <Button type="submit">Search</Button>
+            <Button style={{ fontSize: "20px" }} type="submit">
+              Search
+            </Button>
           </Form>
           {/* <Button onClick={() => onImageCownload("scheisse")} /> */}
           <ListSearch

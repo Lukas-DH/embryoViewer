@@ -16,17 +16,16 @@ export default function Home() {
       <div className={styles.container}>
         <main className={styles.main}>
           <h1 className={styles.title}>
-            Welcome to <a href="">EmbryoView!</a>
+            Bienvenue à <a href="">EmbryoView!</a>
           </h1>{" "}
           <p className={styles.description}>
-            Get started by scanning your patient barcode using teh device
-            infront of you.
+            Commencez en scannant votre code-barres
             <br></br>
             <br></br>
             <Image
               src={wlecomeCode}
               alt="you"
-              style={{ width: "160px", height: "160px" }}
+              style={{ width: "320px", height: "320px" }}
               // className="d-inline-block align-top"
             />{" "}
           </p>
