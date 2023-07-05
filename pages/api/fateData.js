@@ -10,7 +10,7 @@ export default async function handler(req, res) {
     });
 
     const response = await fetch(
-      `https://10.13.45.201/geri_connect/public/api/v1/faterecords?session_uuid=${param2}`,
+      `https://159.89.111.193/geri_connect/public/api/v1/faterecords?session_uuid=${param2}`,
       {
         agent: httpsAgent,
         headers: {

@@ -36,7 +36,7 @@ function Reader() {
         session_uuid: sessionRecord.videoID.session_uuid,
       });
       console.log("yippyyyyy", pdata);
-      // window.location.href = `https://10.13.45.201/files/video.json/${sessionRecord.videoID.session_uuid}/well01_zid99.mp4`;
+      // window.location.href = `https://159.89.111.193/files/video.json/${sessionRecord.videoID.session_uuid}/well01_zid99.mp4`;
     } catch (error) {
       // Handle any errors that occurred during the fetch calls
       console.log(error);
@@ -47,8 +47,8 @@ function Reader() {
     console.log(pdata);
     setShowModal(status);
     // Redirect to the next step
-    // window.location.href = `https://10.13.45.201/files/video.json/${url}/well01_zid99.mp4`;
-    // window.location.href = `https://10.13.45.201/files/video.json/${url}`
+    // window.location.href = `https://159.89.111.193/files/video.json/${url}/well01_zid99.mp4`;
+    // window.location.href = `https://159.89.111.193/files/video.json/${url}`
     // router.push(`${url}`);
   }
 

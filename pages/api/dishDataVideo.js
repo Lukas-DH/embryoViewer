@@ -11,7 +11,7 @@ export default async function handler(req, res) {
     });
 
     const response = await fetch(
-      `https://10.13.45.201/geri_connect/public/api/v1/sessionrecords?session_uuid=${param2}`,
+      `https://159.89.111.193/geri_connect/public/api/v1/sessionrecords?session_uuid=${param2}`,
       {
         agent: httpsAgent,
         headers: {
@@ -31,7 +31,7 @@ export default async function handler(req, res) {
     const videoID = data.content[0].dish_uuid;
     console.log("videoID", videoID);
     const response2 = await fetch(
-      `https://10.13.45.201/geri_connect/public/api/v1/dishrecords?dish_uuid=${videoID}`,
+      `https://159.89.111.193/geri_connect/public/api/v1/dishrecords?dish_uuid=${videoID}`,
       {
         agent: httpsAgent,
         headers: {

@@ -81,7 +81,7 @@ const Post = () => {
                         playbackRate={2}
                         width="30vw"
                         // height={840}
-                        url={`https://10.13.45.201/files/video.json/${videop}/well${
+                        url={`https://159.89.111.193/files/video.json/${videop}/well${
                           video.well_number < 10
                             ? "0" + video.well_number
                             : "" + video.well_number
