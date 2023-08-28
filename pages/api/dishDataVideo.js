@@ -29,7 +29,7 @@ export default async function handler(req, res) {
     // );
     // testxxx
     const videoID = data.content[0].dish_uuid;
-    console.log("videoID", videoID);
+    console.log("videoIDxxx", videoID);
     const response2 = await fetch(
       `https://10.13.45.201/geri_connect/public/api/v1/dishrecords?dish_uuid=${videoID}`,
       {
