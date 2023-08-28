@@ -28,7 +28,7 @@ export default async function handler(req, res) {
     // );
     const content = data.content;
 
-    console.log("videoID", content);
+    console.log("videoIDyyy", content);
 
     res.status(200).json({ content });
   } catch (error) {
