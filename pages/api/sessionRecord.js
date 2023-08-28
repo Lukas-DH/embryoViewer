@@ -27,8 +27,8 @@ export default async function handler(req, res) {
     // const filteredData = data.content.filter(
     //   (item) => item.available === true
     // );
-    // testxxx
-    const videoID = data.content[1];
+    // testxxx duplicate
+    const videoID = data.content[0];
 
     console.log("videoID", videoID);
 
