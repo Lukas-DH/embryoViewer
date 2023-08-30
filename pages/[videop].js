@@ -53,6 +53,16 @@ const Post = () => {
       fetchData();
     }
   }, [router.query]);
+
+  useEffect(() => {
+    const timeoutDuration = 15 * 60 * 1000; // 15 minutes in milliseconds
+    const timer = setTimeout(() => {
+      router.push("/");
+    }, timeoutDuration);
+
+    return () => clearTimeout(timer);
+  }, [router]);
+
   console.log(fate);
 
   return (
