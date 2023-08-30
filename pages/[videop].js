@@ -89,6 +89,8 @@ const Post = () => {
                         loop={true}
                         controls={true}
                         playbackRate={2}
+                        muted={true}
+                        volume={0}
                         // width="100% !important;"
                         // height="100% !important"
                         width="25vw"
