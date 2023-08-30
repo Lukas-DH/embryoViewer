@@ -23,15 +23,7 @@ function ListSearch(props) {
                 key={index}
                 href="/createQR"
                 onClick={() => {
-                  props.qUuid(
-                    item.dish_uuid
-                    // JSON.stringify({
-                    //   data: {
-                    //     uuidQR: item.dish_uuid,
-                    //     dobQR: formattedDate(item.patient_date_of_birth),
-                    //   },
-                    // })
-                  );
+                  props.qUuid(item.dish_uuid);
                   props.qRValue(
                     item.patient_given_names + ", " + item.patient_name,
                     item.dish_uuid
@@ -48,6 +40,14 @@ function ListSearch(props) {
                   )}
                 </h5>
                 <h5>Patient ID: {item.identifier_1}</h5>
+                <h5>
+                  Created:{" "}
+                  {
+                    new Date(item.record_created * 1000)
+                      .toISOString()
+                      .split("T")[0]
+                  }
+                </h5>
               </Link>
             );
           })}
