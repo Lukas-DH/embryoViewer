@@ -77,9 +77,9 @@ const Post = () => {
             {fate
               ? fate.content
                   .filter(
-                    (video) =>
-                      video.fate_status.includes("transfer") ||
-                      video.fate_status.includes("freeze")
+                    (video) => video.fate_status.includes("transfer")
+                    // ||
+                    // video.fate_status.includes("freeze")
                   )
                   .slice(0, 3)
                   .map((video) => (
