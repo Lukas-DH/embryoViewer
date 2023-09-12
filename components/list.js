@@ -25,7 +25,8 @@ function ListSearch(props) {
                 onClick={() => {
                   props.qUuid(item.dish_uuid);
                   props.qRValue(
-                    item.patient_given_names + ", " + item.patient_name,
+                    item.patient_given_names,
+                    // + ", " + item.patient_name
                     item.dish_uuid
                   );
                 }}
