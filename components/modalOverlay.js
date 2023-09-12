@@ -55,9 +55,7 @@ const ModalOverlay = ({ onClose, pdata, handleModalClose }) => {
               router.reload();
             }}
           >
-            <Modal.Title>
-              {patient_date_of_birth}Patient Validation {patient_name}
-            </Modal.Title>
+            <Modal.Title>Patient Validation</Modal.Title>
           </Modal.Header>
 
           <Modal.Body>
@@ -77,14 +75,14 @@ const ModalOverlay = ({ onClose, pdata, handleModalClose }) => {
                       onChange={handleInputChange}
                       onClose={onClose}
                     />
-                    <Form.Text className="text-muted">
-                      or scan the barcode
-                    </Form.Text>
+                    {/* <Form.Text className="text-muted">
+                    ou fermer
+                    </Form.Text> */}
                   </Form.Group>{" "}
                   <Button className="m-3" type="submit">
                     Enter
                   </Button>{" "}
-                  or press enter
+                  Ou appuyez sur Entrée
                 </>
               )}
             </Form>{" "}
