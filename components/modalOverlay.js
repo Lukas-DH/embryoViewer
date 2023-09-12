@@ -48,32 +48,45 @@ const ModalOverlay = ({ onClose, pdata, handleModalClose }) => {
         }}
       >
         <Modal.Dialog>
-          <Modal.Header closeButton onClick={() => onClose(false)}>
+          <Modal.Header
+            closeButton
+            onClick={() => {
+              onClose(false);
+              router.reload();
+            }}
+          >
             <Modal.Title>
               {patient_date_of_birth}Patient Validation {patient_name}
             </Modal.Title>
           </Modal.Header>
 
           <Modal.Body>
-            <Form onSubmit={handleFormSubmit}>
-              <Form.Group controlId="formBasicEmail">
-                <Form.Label>
-                  Please enter your date of birth [YYYYMMDD]
-                </Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder={patient_name}
-                  value={inputValue}
-                  onChange={handleInputChange}
-                  onClose={onClose}
-                />
-                <Form.Text className="text-muted">
-                  or scan the barcode
-                </Form.Text>
-              </Form.Group>
-              <Button className="m-3" type="submit">
-                Search
-              </Button>
+            <Form autoComplete="off" onSubmit={handleFormSubmit}>
+              {patient_date_of_birth == "" ? (
+                "en attente des données"
+              ) : (
+                <>
+                  <Form.Group controlId="formBasicEmail">
+                    <Form.Label>
+                      Veuillez entrer votre date de naissance [AAAAMMJJ]
+                    </Form.Label>
+                    <Form.Control
+                      type="text"
+                      placeholder="date de naissance AAAAMMJJ"
+                      value={inputValue}
+                      onChange={handleInputChange}
+                      onClose={onClose}
+                    />
+                    <Form.Text className="text-muted">
+                      or scan the barcode
+                    </Form.Text>
+                  </Form.Group>{" "}
+                  <Button className="m-3" type="submit">
+                    Enter
+                  </Button>{" "}
+                  or press enter
+                </>
+              )}
             </Form>{" "}
             {message && <p>{message}</p>}
           </Modal.Body>

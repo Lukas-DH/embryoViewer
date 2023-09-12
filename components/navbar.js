@@ -22,9 +22,9 @@ function NaviBarBioG() {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="/createQR" style={{ fontSize: "25px" }}>
+              {/* <Nav.Link href="/createQR" style={{ fontSize: "25px" }}>
                 Create barcode
-              </Nav.Link>
+              </Nav.Link> */}
               {/* <Nav.Link href="#features">Search</Nav.Link> */}
             </Nav>
             <Nav>
