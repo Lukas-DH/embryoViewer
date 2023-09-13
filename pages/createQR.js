@@ -91,6 +91,7 @@ function List1() {
       <NaviBarBioG />
       <div className={styles.container}>
         <main className={styles.main}>
+          <h1>Create QR</h1>
           <QRCode className={styles.QRCode} id="QRCode" value={pUuuid} />
           <div className={styles.container}> </div>
 

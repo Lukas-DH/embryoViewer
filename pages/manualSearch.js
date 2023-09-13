@@ -88,9 +88,10 @@ function List1() {
       <NaviBarBioG />
       <div className={styles.container}>
         <main className={styles.main}>
-          <QRCode className={styles.QRCode} id="QRCode" value={pUuuid} />
+          <h1>Manual Patient Search</h1>
+          <br></br>{" "}
+          {/* <QRCode className={styles.QRCode} id="QRCode" value={pUuuid} /> */}
           <div className={styles.container}> </div>
-
           <Form autoComplete="off" onSubmit={handleSumbit}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label style={{ fontSize: "25px" }}>Name search</Form.Label>
