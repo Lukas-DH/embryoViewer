@@ -19,7 +19,7 @@ export default function ScannerInput({ onScanned }) {
         setValue("");
       } else {
         // Update input value
-        setValue((value) => value + event.key);
+        setValue((value) => value + event.target.value);
       }
     }
 
