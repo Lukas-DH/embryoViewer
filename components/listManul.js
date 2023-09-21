@@ -12,7 +12,7 @@ function ListSearch(props) {
     props.data.length === 0
       ? []
       : props.data.sort((a, b) => {
-          return a.record_created - b.record_created;
+          return b.record_created - a.record_created;
         });
   const router = useRouter();
   async function handleClick(value) {

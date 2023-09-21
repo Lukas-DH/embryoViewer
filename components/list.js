@@ -11,7 +11,7 @@ function ListSearch(props) {
     props.data.length === 0
       ? []
       : props.data.sort((a, b) => {
-          return a.patient_date_of_birth - b.patient_date_of_birth;
+          return b.record_created - a.record_created;
         });
 
   // function formattedDate(dob) {
