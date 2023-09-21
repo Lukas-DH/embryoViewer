@@ -5,7 +5,18 @@ import styles from "../styles/Patient.module.css";
 import hello from "./patientVideo";
 
 function ListSearch(props) {
-  const filteredData = props.data.length === 0 ? [] : props.data;
+  const convertToDateObject = ([year, month, day]) => {
+    return new Date(year, month - 1, day);
+  };
+  const filteredData =
+    props.data.length === 0
+      ? []
+      : props.data.sort((a, b) => {
+          return (
+            convertToDateObject(a.patient_date_of_birth) -
+            convertToDateObject(b.patient_date_of_birth)
+          );
+        });
   const router = useRouter();
   async function handleClick(value) {
     console.log(`Scanned value: ${value}`);
@@ -43,7 +54,14 @@ function ListSearch(props) {
                 }}
                 className={styles.card}
               >
-                <h2> {item.patient_name + ", " + item.patient_given_names}</h2>
+                <h2>
+                  {" "}
+                  {
+                    // item.patient_name
+                    // + ", " +
+                    item.patient_given_names
+                  }
+                </h2>
                 <h5>
                   dob:{" "}
                   {item.patient_date_of_birth.replace(
