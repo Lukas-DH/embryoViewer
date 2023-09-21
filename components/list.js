@@ -12,8 +12,8 @@ function ListSearch(props) {
       ? []
       : props.data.sort((a, b) => {
           return (
-            convertToDateObject(a.patient_date_of_birth) -
-            convertToDateObject(b.patient_date_of_birth)
+            convertToDateObject(a.record_created) -
+            convertToDateObject(b.record_created)
           );
         });
 
