@@ -5,17 +5,14 @@ import styles from "../styles/Patient.module.css";
 import hello from "./patientVideo";
 
 function ListSearch(props) {
-  const convertToDateObject = ([year, month, day]) => {
-    return new Date(year, month - 1, day);
-  };
+  // const convertToDateObject = ([year, month, day]) => {
+  //   return new Date(year, month - 1, day);
+  // };
   const filteredData =
     props.data.length === 0
       ? []
       : props.data.sort((a, b) => {
-          return (
-            convertToDateObject(a.record_created) -
-            convertToDateObject(b.record_created)
-          );
+          return a.record_created - b.record_created;
         });
   const router = useRouter();
   async function handleClick(value) {

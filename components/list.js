@@ -4,17 +4,14 @@ import { React, useState } from "react";
 import styles from "../styles/Patient.module.css";
 
 function ListSearch(props) {
-  const convertToDateObject = ([year, month, day]) => {
-    return new Date(year, month - 1, day);
-  };
+  // const convertToDateObject = ([year, month, day]) => {
+  //   return new Date(year, month - 1, day);
+  // };
   const filteredData =
     props.data.length === 0
       ? []
       : props.data.sort((a, b) => {
-          return (
-            convertToDateObject(a.record_created) -
-            convertToDateObject(b.record_created)
-          );
+          return a.patient_date_of_birth - b.patient_date_of_birth;
         });
 
   // function formattedDate(dob) {
