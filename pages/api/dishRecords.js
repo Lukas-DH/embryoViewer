@@ -11,7 +11,7 @@ export default async function handler(req, res) {
     });
 
     const response = await fetch(
-      "https://10.13.45.201/geri_connect/public/api/v1/dishrecords",
+      "https://geri.biogrouppaca.local/geri_connect/public/api/v1/dishrecords",
       {
         agent: httpsAgent,
         headers: {

@@ -30,7 +30,7 @@ function ListSearch(props) {
       router.push(sessionRecord.videoID.session_uuid);
       //change list order here testxxx
 
-      // window.location.href = `https://10.13.45.201/files/video.json/${sessionRecord.videoID.session_uuid}/well01_zid99.mp4`;
+      // window.location.href = `https://geri.biogrouppaca.local/files/video.json/${sessionRecord.videoID.session_uuid}/well01_zid99.mp4`;
     } catch (error) {
       // Handle any errors that occurred during the fetch calls
       console.log(error);
