@@ -9,8 +9,8 @@ export default async function handler(req, res) {
     });
 
     const response = await fetch(
-      "https://geri.biogrouppaca.local/geri_connect/auth/v1/token",
-      // "https://geri.biogrouppaca.local/geri_connect/auth/v1/token",
+      "https://10.13.45.201/geri_connect/auth/v1/token",
+      // "https://10.13.45.201/geri_connect/auth/v1/token",
       {
         agent: httpsAgent,
         headers: {
